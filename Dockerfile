@@ -11,6 +11,9 @@ RUN curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.
 # tools for publishing
 RUN apk --no-cache add bash make git
 
+# g++ for ursa build
+RUN apk --no-cache add g++
+
 COPY docker-entrypoint.sh /usr/local/bin/
 ENTRYPOINT ["docker-entrypoint.sh"]
 
